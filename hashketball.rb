@@ -120,12 +120,14 @@ def good_practices
     
     team_data.each do |attribute, data|
       #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
-      #binding.pry
+      binding.pry
       #attribute is one of 3 keys: :team_name, :colors, :players
       #:players points to an array
  
       #what is 'data' at each loop throughout .each block? when will the following line of code work and when will it break?
-      #this level should not be iterated, only for attribute =  :players will data = an array
+      
+      
+      #this level should not be iterated, only for attribute =:players will data = an array
       data.each do |data_item|
           #binding.pry
       end
