@@ -137,7 +137,7 @@ def good_practices
       
       #this level should not be iterated, only for attribute =:players will data = an array
       
-      if attribute = :players
+      if attribute == :players
         
         data.each do |data_item|
           
