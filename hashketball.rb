@@ -196,6 +196,22 @@ end
 
 def big_shoe_rebounds
   big_shoe = nil
+  big_shoe_rebound = nil
+  game_hash.each do |location, team_data|
+    
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |data_item|
+          if data_item[:shoe] > big_shoe
+            big_shoe_rebound = data_item[:rebounds]
+            
+          end
+        end
+      end
+    end
+  end
+  big_shoe_rebound
+end
   
   
         
