@@ -196,7 +196,8 @@ end
 
 def big_shoe_rebounds
   big_shoe = 0
-  big_shoe_rebound = nil
+  big_shoe_rebound = 0
+  big_shoe_name = ""
   game_hash.each do |location, team_data|
     
     team_data.each do |attribute, data|
@@ -204,12 +205,13 @@ def big_shoe_rebounds
         data.each do |data_item|
           if data_item[:shoe] > big_shoe
             big_shoe_rebound = data_item[:rebounds]
-            
+            big_shoe_name = data_item[:name]
           end
         end
       end
     end
   end
+  binding.pry
   big_shoe_rebound
 end
   
