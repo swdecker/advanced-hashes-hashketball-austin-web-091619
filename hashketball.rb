@@ -254,7 +254,10 @@ def winning_team
     end
   end
   #binding.pry
-  scorer
+  if home_score>away_score
+    return game_hash[:home][:team_name]
+  end
+  game_hash[:away][:team_name]
 end
       
 
