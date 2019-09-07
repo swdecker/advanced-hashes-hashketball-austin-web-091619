@@ -259,6 +259,27 @@ def winning_team
   end
   game_hash[:away][:team_name]
 end
+
+def player_with_longest_name
+  name_length = 0
+  long_name = ""
+  game_hash.each do |location, team_data|
+    
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |data_item|
+          if data_item[:name].length > name_length
+            name_length = data_item[:name].length
+            long_name = data_item[:name]
+          end
+        end
+      end
+    end
+  end
+  #binding.pry
+  scorer
+end
+  
       
 
 def good_practices
