@@ -180,7 +180,10 @@ def player_stats(name)
       if attribute == :players
         data.each do |data_item|
           if data_item[:name] == name
-            stats = data_item
+            #my hash has a name so trim it out by remaking stats
+            data_item.each do |stat, value|
+              if stat !==
+              stats[stat] = data_item
           end
         end
       end
