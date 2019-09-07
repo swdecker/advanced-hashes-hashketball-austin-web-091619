@@ -111,6 +111,7 @@ def num_points_scored(name)
           if data_item[:name] == name
             points = data_item[:points]
           end
+        end
       end
     end
   end
