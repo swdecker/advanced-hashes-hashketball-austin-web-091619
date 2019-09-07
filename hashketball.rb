@@ -212,7 +212,7 @@ def big_shoe_rebounds
       end
     end
   end
-  binding.pry
+  #binding.pry
   big_shoe_rebound
 end
   
