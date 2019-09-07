@@ -109,7 +109,8 @@ def num_points_scored(name)
       if attribute = :players
         data.each do |data_item|
           if data_item[:name] == name
-            points = data_item[]
+            points = data_item[:points]
+          end
       end
     end
   end
