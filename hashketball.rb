@@ -238,7 +238,24 @@ end
 
 def winning_team
   home_score = 0
-  away_score = 0         
+  away_score = 0
+  game_hash.each do |location, team_data|
+    
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |data_item|
+          if location == :home
+            home_score += data_item[:points]
+          else
+            away_score += data_item[:points]
+          end
+        end
+      end
+    end
+  end
+  #binding.pry
+  scorer
+end
       
 
 def good_practices
