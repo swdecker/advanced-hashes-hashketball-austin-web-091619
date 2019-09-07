@@ -277,7 +277,7 @@ def player_with_longest_name
     end
   end
   #binding.pry
-  scorer
+  long_name
 end
   
       
