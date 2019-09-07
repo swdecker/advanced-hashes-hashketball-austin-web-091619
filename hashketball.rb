@@ -105,7 +105,12 @@ def num_points_scored(name)
   points = 0
   game_hash.each do |location, team_data|
     
-    team_data.each do
+    team_data.each do |attribute, data|
+      if attribute = :players
+        data.each do |data_item|
+          if data_item[:name] == name
+            points = data_item[]
+      end
     end
   end
   
@@ -122,7 +127,7 @@ def good_practices
     
     team_data.each do |attribute, data|
       #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
-      binding.pry
+      #binding.pry
       #attribute is one of 3 keys: :team_name, :colors, :players
       #:players points to an array
  
@@ -134,6 +139,8 @@ def good_practices
       if attribute = :players
         
         data.each do |data_item|
+          
+          #data_item is a hash of a players stats
           #binding.pry
         end
       end
