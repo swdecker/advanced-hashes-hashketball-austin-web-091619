@@ -299,7 +299,7 @@ def long_name_steals_a_ton?
     end
   end
   #binding.pry
-  stearler== long_name
+  stealer == long_name
 end
       
 
