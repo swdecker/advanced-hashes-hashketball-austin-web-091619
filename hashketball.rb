@@ -285,6 +285,22 @@ def long_name_steals_a_ton?
   most_steals = 0
   stealer = ""
   
+  game_hash.each do |location, team_data|
+    
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |data_item|
+          if data_item[:steals] > most_steals
+            most_points = data_item[:steals]
+            stealer = data_item[:name]
+          end
+        end
+      end
+    end
+  end
+  #binding.pry
+  stearler== long_name
+end
       
 
 def good_practices
