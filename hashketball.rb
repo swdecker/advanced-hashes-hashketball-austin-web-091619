@@ -1,5 +1,137 @@
 # Write your code here!
+require 'pry'
 
+def game_hash
+  gh = { home: {team_name: "Brooklyn Nets", colors: ["Black","White"], players: [
+    { :name => "",
+      :number => 1,
+      :shoe => 2,
+      :points => 3,
+      :rebounds => 3,
+      :assists => 4,
+      :steals => 5,
+      :blocks => 6,
+      :slam_dunks => 7,
+
+    }]
+  },
+  away: {team_name: "Charlotte Hornets", colors: ["Turquoise","Purple"], players: [
+    { :name => "",
+      :number => 1,
+      :shoe => 2,
+      :points => 3,
+      :rebounds => 3,
+      :assists => 4,
+      :steals => 5,
+      :blocks => 6,
+      :slam_dunks => 7,
+
+    }]
+  }
+  }
+  
+  #format data from tables as arrays that we can map to the players array
+  home_hash = {
+            :name => ["Alan Anderson",	"Reggie Evans",	"Brook Lopez",	"Mason Plumlee",	"Jason Terry"],
+            :number =>[	0,	30,	11,	1,	31],
+            :shoe	=> [16,	14,	17,	19,	15],
+            :points => [22,	12,	17,	26,	19],
+            :rebounds =>	[12, 12,	19,	11,	2],
+            :assists =>	[12,	12,	10,	6,	2],
+            :steals =>	[3,	12,	3,	3,	4],
+            :blocks =>	[1,	12,	1,	8,	11],
+            :slam_dunks =>	[1,	7,	15,	5,	1]
+            }
+  away_hash = {
+    :name => ["Jeff Adrien",	"Bismack Biyombo",	"DeSagna Diop",	"Ben Gordon",	"Kemba Walker"],
+    :number => [	4,	0,	2,	8,	33],
+    :shoe =>	[18,	16,	14,	15,	15],
+    :points =>	[10,	12,	24,	33,	6],
+    :rebounds =>	[1,	4,	12,	3,	12],
+    :assists =>	[1,	7,	12,	2,	12],
+    :steals =>	[2,	22,	4,	1,	7],
+    :blocks =>	[7,	15,	5,	1,	5],
+    :slam_dunks =>	[2,	10,	5,	0,	12]
+  }
+   
+   #binding.pry
+   home_players_array  = [{}]
+   away_players_array = [{}]
+   
+   home_hash.each do |key, value|
+     #put each team hash data set into the game hash data set
+     #probably iterate through each value because it will be an array
+     
+     value.each_index do |index|
+     #away_players_array[index] = {}
+     #away_players_array[index][key] = away_hash[key][index]
+     #if index==0
+     #  gh[:away][:players][index] = {} 
+     #end
+     
+     if !gh[:home][:players][index]
+       gh[:home][:players][index]={}
+     end
+     #binding.pry
+     gh[:home][:players][index][key] = home_hash[key][index]
+     end
+     
+   end
+   
+   away_hash.each do |key, value|
+     #put each team hash data set into the game hash data set
+     #probably iterate through each value because it will be an array
+     
+     value.each_index do |index|
+     #away_players_array[index] = {}
+     #away_players_array[index][key] = away_hash[key][index]
+     #if index==0
+     #  gh[:away][:players][index] = {} 
+     #end
+     
+     if !gh[:away][:players][index]
+       gh[:away][:players][index]={}
+     end
+     #binding.pry
+     gh[:away][:players][index][key] = away_hash[key][index]
+     end
+     
+   end
+  #binding.pry
+  gh
+end
+
+def num_points_scored(name)
+  points = 0
+  game_hash.each do |location, team_data|
+    
+    team_data.each do
+  
+  points 
+end
+
+def good_practices
+  game_hash.each do |location, team_data|
+    #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
+    #binding.pry
+    
+    #location can equal :home or :away
+    #team data is a hash with 3 keys: :team_name, :colors, :players
+    
+    team_data.each do |attribute, data|
+      #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
+      #binding.pry
+      #attribute is one of 3 keys: :team_name, :colors, :players
+      #:players points to an array
+ 
+      #what is 'data' at each loop throughout .each block? when will the following line of code work and when will it break?
+      #this level should not be iterated, only for attribute =  :players will data = an array
+      data.each do |data_item|
+          #binding.pry
+      end
+    end
+  end
+end
 
 
 
