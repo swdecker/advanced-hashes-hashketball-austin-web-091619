@@ -130,9 +130,14 @@ def good_practices
       
       
       #this level should not be iterated, only for attribute =:players will data = an array
-      data.each do |data_item|
+      
+      if attribute = :players
+        
+        data.each do |data_item|
           #binding.pry
+        end
       end
+      
     end
   end
 end
