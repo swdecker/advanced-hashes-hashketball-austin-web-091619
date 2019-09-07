@@ -106,6 +106,8 @@ def num_points_scored(name)
   game_hash.each do |location, team_data|
     
     team_data.each do
+    end
+  end
   
   points 
 end
